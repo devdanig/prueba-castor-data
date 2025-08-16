@@ -32,7 +32,7 @@
       <img class="epson-banner-box" src="/src/assets/images/BANNER_EPSON-02.jpg" alt="EPSON" />
     </section>
 
-    <!-- Sección: Impresoras -->
+    <!--  Impresoras -->
     <section class="epson-section">
       <div class="epson-container">
         <div class="epson-section-container">
@@ -83,7 +83,7 @@
       </div>
     </section>
 
-    <!-- Sección: Plotter -->
+    <!-- Plotter -->
     <section class="epson-section">
       <div class="epson-container">
         <div class="epson-section-container">
@@ -134,7 +134,7 @@
       </div>
     </section>
 
-    <!-- Sección: Tintas -->
+    <!--  Tintas -->
     <section class="epson-section">
       <div class="epson-container">
         <div class="epson-section-container">
@@ -185,7 +185,7 @@
       </div>
     </section>
 
-    <!-- Sección: Proyectores -->
+    <!-- Proyectores -->
     <section class="epson-section">
       <div class="epson-container">
         <div class="epson-section-container">
@@ -274,53 +274,74 @@
   </div>
 
   <script>
+  // Objeto que guarda el índice actual (slide visible) de cada carrusel.
+  // La clave es la categoría y el valor es el número de slide (empezando en 0).
+  let currentSlides = {
+    impresoras: 0,
+    plotters: 0,
+    tintas: 0,
+    proyectores: 0
+  };
 
-    let currentSlides = {
-      impresoras: 0,
-      plotters: 0,
-      tintas: 0,
-      proyectores: 0
-    };
-
-    function moveCarousel(category, direction) {
-      const carousel = document.getElementById(`carousel-${category}`);
-      const slides = carousel.children.length;
-      
-      currentSlides[category] += direction;
-      
-      if (currentSlides[category] >= slides) {
-        currentSlides[category] = 0;
-      } else if (currentSlides[category] < 0) {
-        currentSlides[category] = slides - 1;
-      }
-      
-      updateCarousel(category);
+  // Mueve el carrusel 'category' una posición 'direction' (1 adelante, -1 atrás).
+  function moveCarousel(category, direction) {
+    // Tomamos el contenedor de slides del carrusel según su id dinámico.
+    const carousel = document.getElementById(`carousel-${category}`);
+    // Cuenta cuántos slides (hijos) hay dentro del carrusel.
+    const slides = carousel.children.length;
+    
+    // Sumamos la dirección al índice actual de la categoría.
+    currentSlides[category] += direction;
+    
+    // Si nos pasamos del último slide, volvemos al primero (efecto loop).
+    if (currentSlides[category] >= slides) {
+      currentSlides[category] = 0;
+    // Si retrocedemos antes del primero, saltamos al último.
+    } else if (currentSlides[category] < 0) {
+      currentSlides[category] = slides - 1;
     }
+    
+    // Aplicamos visualmente el cambio de slide y actualizamos los punticos.
+    updateCarousel(category);
+  }
 
-    function currentSlide(category, n) {
-      currentSlides[category] = n - 1;
-      updateCarousel(category);
+  // Salta directamente al slide 'n' (1-based) de la categoría 'category'.
+  function currentSlide(category, n) {
+    // Guardamos el índice como base 0 (por eso n - 1).
+    currentSlides[category] = n - 1;
+    // Refrescamos la vista del carrusel y sus indicadores.
+    updateCarousel(category);
+  }
+
+  // Actualiza la posición del carrusel y el estado de los punticos activos.
+  function updateCarousel(category) {
+    // Obtenemos el carrusel de esa categoría.
+    const carousel = document.getElementById(`carousel-${category}`);
+    // Obtenemos todos los punticos (dots) del carrusel de esa categoría.
+    const dots = document.getElementById(`dots-${category}`).children;
+    
+    // Movemos el carrusel usando translateX: cada slide ocupa 100% del ancho.
+    // Si estamos en el slide 2 (índice 1), movemos -100%; en el 3, -200%, etc.
+    carousel.style.transform = `translateX(-${currentSlides[category] * 100}%)`;
+    
+    // --- Actualización visual de los punticos ---
+    // Primero quitamos la clase 'active' de todos los punticos.
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove('active');
     }
+    // Luego activamos el puntico que corresponde al slide actual.
+    dots[currentSlides[category]].classList.add('active');
+  }
 
-    function updateCarousel(category) {
-      const carousel = document.getElementById(`carousel-${category}`);
-      const dots = document.getElementById(`dots-${category}`).children;
-      
-      carousel.style.transform = `translateX(-${currentSlides[category] * 100}%)`;
-      
-      // punticos del carrusel
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].classList.remove('active');
-      }
-      dots[currentSlides[category]].classList.add('active');
-    }
-
-    // Auto play carrusel
-    setInterval(() => {
-      Object.keys(currentSlides).forEach(category => {
-        moveCarousel(category, 1);
-      });
-    }, 4000);
-  </script>
+  // Reproducción automática (auto-play) de todos los carruseles.
+  // Cada 4 segundos, avanza 1 slide en cada categoría.
+  setInterval(() => {
+    // Recorremos cada categoría registrada en currentSlides.
+    Object.keys(currentSlides).forEach(category => {
+      // Movemos el carrusel de esa categoría hacia adelante.
+      moveCarousel(category, 1);
+    });
+  }, 4000); // 4000 ms = 4 segundos
+</script>
 </body>
 </html>
