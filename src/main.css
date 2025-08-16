@@ -1,0 +1,368 @@
+/* Fuentes */
+
+@font-face {
+        font-family: 'Roboto';
+        src: url('/src/assets/fonts/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        src: url('/src/assets/fonts/Roboto-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+        font-weight: 100 900;
+        font-style: italic;
+        font-display: swap;
+    }
+
+    /*  Variables y base  */
+    :root {
+        --epson-blue: #0033A0;
+        --text: #111;
+        --muted: #888;
+        --line: #e6e6e6;
+        --card: #f5f5f5;
+        --bg-soft: #f9f9f9;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { 
+        margin: 0; 
+        padding: 0; 
+    }
+
+    body { 
+        font-family: 'Roboto', Arial, Helvetica, sans-serif; 
+        color: var(--text); 
+        line-height: 1.45; 
+    }
+
+    .epson-wrap { 
+        background: #fff; 
+    }
+
+    .epson-container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        padding: 0 16px;
+    }
+
+    /* Navbar */
+    .epson-topbar { 
+        background: var(--epson-blue); 
+    }
+
+    .epson-topbar-inner { 
+        height: 100px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+    }
+
+    .epson-logo { 
+        height: 150px; 
+        width: auto;
+    }
+
+    /*  Menú  */
+    .epson-nav { 
+        background: #fff; 
+        border-bottom: 1px solid var(--line); 
+    }
+
+    .epson-nav-list {
+        list-style: none; 
+        margin: 20px; 
+        padding: 0;
+        display: flex; 
+        gap: 32px; 
+        justify-content: space-evenly;
+    }
+
+    .epson-nav a {
+        display: block; 
+        padding: 14px 0;
+        text-decoration: none; 
+        color: #333; 
+        font-size: 15px; 
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .epson-nav a:hover { 
+        color: var(--epson-blue); 
+        border-bottom: 2px solid var(--epson-blue); 
+    }
+
+    /*  Banner  */
+    .epson-banner-box {
+        margin: 20px auto;
+        border: 2px solid #111;
+        border-radius: 10px;
+        height: 250px;
+        width: 100%;
+        max-width: 100%;
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+        font-size: 38px; 
+        color: #1a1a1a; 
+        background: #fff;
+    }
+
+    /*  Secciones Layout */
+    .epson-section { 
+        padding: 50px 0; 
+    }
+
+    .epson-section-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+    }
+
+    .epson-section-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .epson-section-image {
+        width: 100%;
+        max-width: 80%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .epson-section-cta {
+        background: var(--epson-blue);
+        width: 100%;
+        max-width: 80%;
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .epson-section-cta h3 {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+        font-weight: 600;
+        font-style: italic;
+    }
+
+    .epson-section-cta p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .epson-ver-mas-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .epson-ver-mas {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: white;
+        color: var(--epson-blue);
+        padding: 12px 20px;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 500;
+        border: 2px solid var(--epson-blue);
+    }
+
+    .epson-ver-mas:hover {
+        background: var(--epson-blue);
+        color: white;
+    }
+
+    .epson-section-right {
+        flex: 1;
+    }
+
+    .epson-h2 { 
+        font-size: 24px; 
+        margin: 0 0 16px 0; 
+        color: var(--epson-blue);
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    /*  CARRUSEL  */
+    .epson-carousel {
+        position: relative;
+        height: 180px;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        background: var(--bg-soft);
+    }
+
+    .carousel-container {
+        display: flex;
+        transition: transform 0.3s ease;
+        height: 100%;
+    }
+
+    .carousel-slide {
+        min-width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-slide img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    .carousel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 51, 160, 0.8);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-nav:hover {
+        background: var(--epson-blue);
+    }
+
+    .carousel-prev {
+        left: 10px;
+    }
+
+    .carousel-next {
+        right: 10px;
+    }
+
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 10px;
+    }
+
+    .carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .carousel-dot.active {
+        background: var(--epson-blue);
+    }
+
+    /*  FOOTER  */
+    .epson-footer {
+        background: var(--epson-blue);
+        color: white;
+        padding: 40px 0 20px 0;
+        margin-top: 50px;
+    }
+
+    .epson-footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        margin-bottom: 30px;
+    }
+
+    .epson-footer-logo {
+        height: 80px;
+        width: auto;
+    }
+
+    .epson-footer-section {
+        flex: 1;
+    }
+
+    .epson-footer-section h4 {
+        margin: 0 0 15px 0;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .epson-footer-section p,
+    .epson-footer-section a {
+        margin: 8px 0;
+        font-size: 14px;
+        color: white;
+        text-decoration: none;
+        display: block;
+    }
+
+    .epson-footer-section a:hover {
+        text-decoration: underline;
+    }
+
+    .epson-footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /*  Responsivo  */
+    @media (max-width: 768px) {
+        .epson-topbar-inner { 
+            height: 56px; 
+        }
+
+        .epson-logo { 
+            height: 32px; 
+        }
+
+        .epson-nav-list { 
+            gap: 18px; 
+            flex-wrap: wrap; 
+        }
+
+        .epson-banner-box { 
+            height: 140px; 
+            font-size: 28px; 
+        }
+        
+        .epson-section-container {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .epson-footer-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 25px;
+        }
+
+        .epson-footer-section:not(:first-child) {
+            display: none;
+        }
+
+        .epson-footer-logo {
+            height: 60px;
+        }
+    }

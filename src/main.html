@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/src/main.css">
+  <title>Landing EPSON</title>
+</head>
+<body>
+  <div class="epson-wrap">
+    <!-- Barra azul con logo -->
+    <header class="epson-topbar">
+      <div class="epson-container epson-topbar-inner">
+        <img class="epson-logo" src="/src/assets/images/LOGO-EPSON.png" alt="EPSON" />
+      </div>
+    </header>
+
+    <!-- Menú principal -->
+    <nav class="epson-nav" aria-label="Navegación principal">
+      <div class="epson-container">
+        <ul class="epson-nav-list">
+          <li><a href="#">Impresoras</a></li>
+          <li><a href="#">Plotter</a></li>
+          <li><a href="#">Suministros</a></li>
+          <li><a href="#">Proyectores</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Banner principal -->
+    <section class="epson-container">
+      <img class="epson-banner-box" src="/src/assets/images/BANNER_EPSON-02.jpg" alt="EPSON" />
+    </section>
+
+    <!-- Sección: Impresoras -->
+    <section class="epson-section">
+      <div class="epson-container">
+        <div class="epson-section-container">
+          <div class="epson-section-left">
+            <img class="epson-section-image" src="/src/assets/images/imagen1.png" alt="Impresora EPSON" />
+            <div class="epson-section-cta">
+              <h3>Tecnología sin cartuchos</h3>
+              <p>
+                Disfruta de la comodidad y ahorro con el sistema EcoTank tanto para
+                hogar como para oficina
+              </p>
+            </div>
+          </div>
+          
+          <div class="epson-section-right">
+            <h2 class="epson-h2">Impresoras</h2>
+            <div class="epson-carousel" aria-label="Carrusel de impresoras">
+              <div class="carousel-container" id="carousel-impresoras">
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/impresoras/impresora1.jpg" alt="Impresora 1">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/impresoras/impresora2.jpg" alt="Impresora 2">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/impresoras/impresora3.jpg" alt="Impresora 3">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/impresoras/impresora4.jpg" alt="Impresora 4">
+                </div>
+              </div>
+              <button class="carousel-nav carousel-prev" onclick="moveCarousel('impresoras', -1)">‹</button>
+              <button class="carousel-nav carousel-next" onclick="moveCarousel('impresoras', 1)">›</button>
+            </div>
+            <div class="carousel-dots" id="dots-impresoras">
+              <span class="carousel-dot active" onclick="currentSlide('impresoras', 1)"></span>
+              <span class="carousel-dot" onclick="currentSlide('impresoras', 2)"></span>
+              <span class="carousel-dot" onclick="currentSlide('impresoras', 3)"></span>
+              <span class="carousel-dot" onclick="currentSlide('impresoras', 4)"></span>
+            </div>
+            <div class="epson-ver-mas-container">
+              <a class="epson-ver-mas" href="#" role="button">
+                Ver más →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Plotter -->
+    <section class="epson-section">
+      <div class="epson-container">
+        <div class="epson-section-container">
+          <div class="epson-section-left">
+            <h2 class="epson-h2">Plotter</h2>
+            <div class="epson-carousel" aria-label="Carrusel de plotters">
+              <div class="carousel-container" id="carousel-plotters">
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/plotter/plotter1.jpg" alt="Plotter 1">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/plotter/plotter2.jpg" alt="Plotter 2">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/plotter/plotter3.jpg" alt="Plotter 3">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/plotter/plotter4.jpg" alt="Plotter 4">
+                </div>
+              </div>
+              <button class="carousel-nav carousel-prev" onclick="moveCarousel('plotters', -1)">‹</button>
+              <button class="carousel-nav carousel-next" onclick="moveCarousel('plotters', 1)">›</button>
+            </div>
+            <div class="carousel-dots" id="dots-plotters">
+              <span class="carousel-dot active" onclick="currentSlide('plotters', 1)"></span>
+              <span class="carousel-dot" onclick="currentSlide('plotters', 2)"></span>
+              <span class="carousel-dot" onclick="currentSlide('plotters', 3)"></span>
+              <span class="carousel-dot" onclick="currentSlide('plotters', 4)"></span>
+            </div>
+            <div class="epson-ver-mas-container">
+              <a class="epson-ver-mas" href="#" role="button">
+                Ver más →
+              </a>
+            </div>
+          </div>
+          
+          <div class="epson-section-right">
+            <img class="epson-section-image" src="/src/assets/images/imagen2.png" alt="Plotter EPSON" />
+            <div class="epson-section-cta">
+              <h3>Precisión y calidad</h3>
+              <p>
+                Diseñados para soportar una carga de trabajo intensa, ofreciendo
+                velocidad y fiabilidad en cada impresión
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Tintas -->
+    <section class="epson-section">
+      <div class="epson-container">
+        <div class="epson-section-container">
+          <div class="epson-section-left">
+            <img class="epson-section-image" src="/src/assets/images/imagen3.png" alt="Tintas EPSON" />
+            <div class="epson-section-cta">
+              <h3>Color que rinde y dura</h3>
+              <p>
+                Colores intensos y nítidos en cada impresión. Descubre la
+                tranquilidad de imprimir por menos con Epson
+              </p>
+            </div>
+          </div>
+          
+          <div class="epson-section-right">
+            <h2 class="epson-h2">Tintas</h2>
+            <div class="epson-carousel" aria-label="Carrusel de tintas">
+              <div class="carousel-container" id="carousel-tintas">
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/tintas/tinta1.jpg" alt="Tinta 1">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/tintas/tinta3.jpg" alt="Tinta 2">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/tintas/tinta1.jpg" alt="Tinta 3">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/tintas/tinta3.jpg" alt="Tinta 4">
+                </div>
+              </div>
+              <button class="carousel-nav carousel-prev" onclick="moveCarousel('tintas', -1)">‹</button>
+              <button class="carousel-nav carousel-next" onclick="moveCarousel('tintas', 1)">›</button>
+            </div>
+            <div class="carousel-dots" id="dots-tintas">
+              <span class="carousel-dot active" onclick="currentSlide('tintas', 1)"></span>
+              <span class="carousel-dot" onclick="currentSlide('tintas', 2)"></span>
+              <span class="carousel-dot" onclick="currentSlide('tintas', 3)"></span>
+              <span class="carousel-dot" onclick="currentSlide('tintas', 4)"></span>
+            </div>
+            <div class="epson-ver-mas-container">
+              <a class="epson-ver-mas" href="#" role="button">
+                Ver más →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección: Proyectores -->
+    <section class="epson-section">
+      <div class="epson-container">
+        <div class="epson-section-container">
+          <div class="epson-section-left">
+            <h2 class="epson-h2">Proyectores</h2>
+            <div class="epson-carousel" aria-label="Carrusel de proyectores">
+              <div class="carousel-container" id="carousel-proyectores">
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/proyectores/proyector1.jpg" alt="Proyector 1">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/proyectores/proyector2.jpg" alt="Proyector 2">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/proyectores/proyector3.jpg" alt="Proyector 3">
+                </div>
+                <div class="carousel-slide">
+                  <img src="/src/assets/carrusel/proyectores/proyector4.jpg" alt="Proyector 4">
+                </div>
+              </div>
+              <button class="carousel-nav carousel-prev" onclick="moveCarousel('proyectores', -1)">‹</button>
+              <button class="carousel-nav carousel-next" onclick="moveCarousel('proyectores', 1)">›</button>
+            </div>
+            <div class="carousel-dots" id="dots-proyectores">
+              <span class="carousel-dot active" onclick="currentSlide('proyectores', 1)"></span>
+              <span class="carousel-dot" onclick="currentSlide('proyectores', 2)"></span>
+              <span class="carousel-dot" onclick="currentSlide('proyectores', 3)"></span>
+              <span class="carousel-dot" onclick="currentSlide('proyectores', 4)"></span>
+            </div>
+            <div class="epson-ver-mas-container">
+              <a class="epson-ver-mas" href="#" role="button">
+                Ver más →
+              </a>
+            </div>
+          </div>
+          
+          <div class="epson-section-right">
+            <img class="epson-section-image" src="/src/assets/images/imagen4.png" alt="Proyector EPSON" />
+            <div class="epson-section-cta">
+              <h3>Tecnología avanzada</h3>
+              <p>
+                Proyectores de alta calidad para presentaciones profesionales
+                y entretenimiento en casa
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="epson-footer">
+      <div class="epson-container">
+        <div class="epson-footer-content">
+          <div class="epson-footer-section">
+            <img class="epson-footer-logo" src="/src/assets/images/LOGO-EPSON.png" alt="EPSON" />
+          </div>
+          
+          <div class="epson-footer-section">
+            <h4>Contacto</h4>
+            <p>info@epson.com.co</p>
+            <p>+57 (1) 234-5678</p>
+            <p>+57 300 123 4567</p>
+          </div>
+          
+          <div class="epson-footer-section">
+            <h4>Dirección</h4>
+            <p>Calle XX #XX-XX</p>
+            <p>Oficina XXX</p>
+            <p>Bogotá D.C., Colombia</p>
+          </div>
+          
+          <div class="epson-footer-section">
+            <h4>Horarios</h4>
+            <p>Lunes - Viernes</p>
+            <p>8:00 AM - 6:00 PM</p>
+            <p>Sábados: 9:00 AM - 1:00 PM</p>
+          </div>
+        </div>
+        
+        <div class="epson-footer-bottom">
+          <p>&copy; 2025 EPSON Colombia. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+
+    let currentSlides = {
+      impresoras: 0,
+      plotters: 0,
+      tintas: 0,
+      proyectores: 0
+    };
+
+    function moveCarousel(category, direction) {
+      const carousel = document.getElementById(`carousel-${category}`);
+      const slides = carousel.children.length;
+      
+      currentSlides[category] += direction;
+      
+      if (currentSlides[category] >= slides) {
+        currentSlides[category] = 0;
+      } else if (currentSlides[category] < 0) {
+        currentSlides[category] = slides - 1;
+      }
+      
+      updateCarousel(category);
+    }
+
+    function currentSlide(category, n) {
+      currentSlides[category] = n - 1;
+      updateCarousel(category);
+    }
+
+    function updateCarousel(category) {
+      const carousel = document.getElementById(`carousel-${category}`);
+      const dots = document.getElementById(`dots-${category}`).children;
+      
+      carousel.style.transform = `translateX(-${currentSlides[category] * 100}%)`;
+      
+      // punticos del carrusel
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove('active');
+      }
+      dots[currentSlides[category]].classList.add('active');
+    }
+
+    // Auto play carrusel
+    setInterval(() => {
+      Object.keys(currentSlides).forEach(category => {
+        moveCarousel(category, 1);
+      });
+    }, 4000);
+  </script>
+</body>
+</html>
